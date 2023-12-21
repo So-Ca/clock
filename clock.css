@@ -10,8 +10,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh; /* Con questo allineo al centro anche sull'asse y....cosa che nn riesco mai a fare solo con align-item PD*/
-  overflow: hidden; /*Questo serve a nascondere la scroll bar nel caso non serve*/
+  min-height: 90vh;
+  overflow: hidden;
 }
 
 .clock{
@@ -33,9 +33,7 @@ body{
   transform: rotate(var(--rotation));
   --rotation: 0;
 }
-/* 
-Ruoto il contenitore number dentro il clock mettendo una variabile e definendola sotto e poi assegno un valore diverso alla variabile per ogni numero dell'orologio che voglio ruotare 
-*/
+
 .clock .number1 { --rotation: 30deg; }
 .clock .number2 { --rotation: 60deg; }
 .clock .number3 { --rotation: 90deg; }
@@ -50,8 +48,8 @@ Ruoto il contenitore number dentro il clock mettendo una variabile e definendola
 
 .clock .hand{
   position: absolute;
-  bottom: 50%; /* Posizione absolute 50% dal basso*/
-  left: 50%; /* Posizione absolute 50% da sinistra*/
+  bottom: 50%;
+  left: 50%;
   border: 1px solid white;
   border-top-right-radius: 10px; 
   border-top-left-radius: 10px; 
@@ -60,11 +58,6 @@ Ruoto il contenitore number dentro il clock mettendo una variabile e definendola
   --rotation: 0;
   transform-origin: bottom;
 }
-/*
-- Translate serve per traslare gli oggetti sull'asse specificato (X) e del vlore specificato tra parentesi.
-- Rotate come sopra serve per ruotare. Ho aggiunto "calc" perchè cosi moltiplico il valore di "--rotation" con "1deg"(al posto di deg si può mettere un'altro unità di misura, nella quale verrà trasformato il valore di rotation) che automaticamente assegna il valore degreese al valore rotation, che altrimenti sarebbe indefinito.
-- Transform-origin serve per dirgli secondo quale punto deve avvenire la rotazione
-*/
 
 .clock::after{
   content: '';
